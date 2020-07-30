@@ -1,0 +1,36 @@
+﻿@model POCForVivek.Models.A2ZClientCredentials
+
+@{
+    ViewData["Title"] = "A2Z Client Login";
+}
+
+<h1>Client</h1>
+
+<h4>A2ZClientCredentials</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="LoginClient">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input id="txtUserName" asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input id="txtPassword" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="button" value="Login" onclick="LoginClient();" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/ClientLogin.js" asp-append-version="true"></script>
+}
+
